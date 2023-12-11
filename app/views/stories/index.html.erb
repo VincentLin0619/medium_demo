@@ -1,0 +1,53 @@
+<h1 class="title">故事列表</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th><abbr title="Position">ID</abbr></th>
+      <th>標題</th>
+      <th>狀態</th>
+      <th></th>
+      <th></th>
+      <th><abbr title="Goals for">上傳時間</abbr></th>
+      <th><abbr title="Goals against">最後更新時間</abbr></th>
+      <th>內文</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th><abbr title="Position">ID</abbr></th>
+      <th>標題</th>
+      <th>狀態</th>
+      <th></th>
+      <th></th>
+      <th><abbr title="Goals for">上傳時間</abbr></th>
+      <th><abbr title="Goals against">最後更新時間</abbr></th>
+      <th>內文</th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        <th>
+          <%= story.id %>
+        </th>
+        <td>
+          <h2 class="subtitle"><%= story.title %></h2>
+        </td>
+        <td>
+          <%= story.status == 0 ? '草稿' : '已發布' %>
+        </td>
+        <td>
+          <%= link_to '編輯', edit_story_path(story), class: 'button is-light  is-small' %>
+        </td>
+        <td>
+          <%= link_to '刪除', story, method: :delete, class: 'button is-danger is-small', data: { confirm: '確定要刪除嗎?' } %>
+        </td>
+        <td><%= story.created_at.strftime('%Y-%m-%d') %></td>
+        <td><%= time_ago_in_words(story.updated_at) %></td>
+        <td>
+          <p class="block"><%= story.content %></p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
