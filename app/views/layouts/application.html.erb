@@ -10,7 +10,7 @@
   </head>
   <body>
     <%= render 'shared/frontend/navbar' %>
-    <%= render 'shared/frontend/flash' %>
+    <%= render 'shared/frontend/flash' if flash[:notice].present? %>
     <%= alert %>
     <div class="container">
       <%= yield %>

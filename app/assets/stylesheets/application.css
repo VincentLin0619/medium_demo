@@ -7,3 +7,13 @@
 #app-logo {
   font-size: 3.5rem;
 }
+.notification {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* 過渡效果，0.5 秒，緩動函數 */
+}
+
+.notification.hidden {
+  opacity: 0; /* 設置透明度為 0，元素將淡出 */
+  /* height: 0; 如果元素有高度，也可以設置高度為 0，實現更好的淡出效果 */
+  overflow: hidden; /* 隱藏元素溢出的內容 */
+}
