@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 
 const importAll = (context) => context.keys().forEach(context);
-importAll(require.context("./bulma", true, /\.js$/));
+importAll(require.context("../packs", true, /\.js$/));
 
 Rails.start();
 Turbolinks.start();

@@ -14,6 +14,8 @@ module MediumDemo
     # Configuration for the application, engines, and railties goes here.
     # config/application.rb
 
+    config.i18n.default_locale = 'zh-TW'
+
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.

@@ -58,3 +58,5 @@ gem 'rubocop'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.9'
+
+gem "rails-i18n", "~> 7.0"
