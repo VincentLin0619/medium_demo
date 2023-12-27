@@ -10,7 +10,7 @@
   <div class="field">
     <%= f.label :password, autofocus: true, autocomplete: "email", required: true, class: 'label'%>
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em><%= I18n.t("devise.shared.minimum_password_length", count: @minimum_password_length) %></em>
     <% end %>
     <div class="control">
       <%= f.password_field :password, autocomplete: "new-password", class: 'input'%>
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="actions">
-    <%= f.submit "Sign up", class: "button is-link" %>
+    <%= f.submit I18n.t("devise.registrations.new.sign_up"), class: "button is-link" %>
   </div>
 <% end %>
 <em>已經有帳號了？</em>
