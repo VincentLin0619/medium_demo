@@ -1,15 +1,17 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand ">
+  <div class="navbar-brand is-vcentered">
     <%= link_to 'LOGO', root_path, class: "navbar-item", id: "app-logo"%>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger my-auto" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
-    <% if user_signed_in? %>
-      <div class="navbar-start">
+    <div class="navbar-start">
+    </div>
+    <div class="navbar-end">
+      <% if user_signed_in? %>
         <div class="navbar-item">
           <div class="buttons">
             <div class="navbar-item has-dropdown is-hoverable has-text-white">
@@ -28,17 +30,15 @@
         </div>
       </div>
     <% else %>
-      <div class="navbar-end">
-        <div class="navbar-item columns is-2">
-          <div class="column">
-            <%= link_to '註冊', new_user_registration_path, class: "button is-primary" %>
-          </div>
-          <div class="column">
-            <%= link_to '登入', new_user_session_path , class: "button is-danger" %>
-          </div>
+      <div class="navbar-item columns is-2">
+        <div class="column">
+          <%= link_to '註冊', new_user_registration_path, class: "button is-primary" %>
         </div>
-      <% end %>
-    </div>
+        <div class="column">
+          <%= link_to '登入', new_user_session_path , class: "button is-danger" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 </nav>

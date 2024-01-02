@@ -32,7 +32,9 @@
           <%= story.id %>
         </th>
         <td>
-          <h2 class="subtitle"><%= story.title %></h2>
+          <h2 class="subtitle">
+            <%= link_to story.title, story_path(story) %>
+          </h2>
         </td>
         <td>
           <%= story.status == 0 ? '草稿' : '已發布' %>
