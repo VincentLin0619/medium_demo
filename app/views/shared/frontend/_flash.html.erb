@@ -1,4 +1,4 @@
-<div class="notification <%= flash_class(flash[:notice]) %>">
+<div class="notification <%= flash[:notice].present?  ? flash_class(flash[:notice]) : alert_class(flash[:alert]) %>">
   <button class="delete"></button>
   <%= flash[:notice] %>
   <%= flash[:alert] %>
